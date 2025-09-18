@@ -3,6 +3,11 @@ apply plugin: 'com.android.application'
 android {
     namespace "com.termux.termuxam"
     compileSdkVersion 33
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId "com.termux.termuxam"
         minSdkVersion 21
@@ -16,7 +21,7 @@ android {
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "TERMUX_PACKAGE_NAME", "\"com.termux\""
+        buildConfigField "String", "TERMUX_PACKAGE_NAME", "\"greater.underscore\""
     }
 
     buildTypes {
@@ -25,6 +30,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
 }
 
 dependencies {

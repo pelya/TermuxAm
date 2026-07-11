@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     namespace "com.termux.termuxam"
     compileSdkVersion 35
+    buildToolsVersion "37.0.0" // Build tools version installed inside the Docker container, the build fails otherwise
 
     buildFeatures {
         buildConfig = true
